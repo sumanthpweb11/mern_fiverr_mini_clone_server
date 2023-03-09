@@ -1,0 +1,36 @@
+{
+  "name": "mern_fiverr_mini_clone_server",
+  "version": "1.0.0",
+  "description": "mern",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ../mern_fiverr_mini_clone_client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mern",
+    "fiverr",
+    "mini",
+    "clone",
+    "crud"
+  ],
+  "author": "sumanth prabhu",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "concurrently": "^7.6.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
