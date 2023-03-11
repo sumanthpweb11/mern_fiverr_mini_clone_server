@@ -33,13 +33,13 @@ app.use(cookieParser());
 dotenv.config();
 mongoose.set("strictQuery", true);
 
-app.use("/auth", authRoute);
-app.use("/users", userRoute);
-app.use("/gigs", gigRoute);
-app.use("/orders", orderRoute);
-app.use("/conversations", conversationRoute);
-app.use("/messages", messageRoute);
-app.use("/reviews", reviewRoute);
+app.use("auth", authRoute);
+app.use("users", userRoute);
+app.use("gigs", gigRoute);
+app.use("orders", orderRoute);
+app.use("conversations", conversationRoute);
+app.use("messages", messageRoute);
+app.use("reviews", reviewRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
