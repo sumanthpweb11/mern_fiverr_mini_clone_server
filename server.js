@@ -22,7 +22,12 @@ const connect = async () => {
   }
 };
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://mern-fiverr-app.onrender.com"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 dotenv.config();
