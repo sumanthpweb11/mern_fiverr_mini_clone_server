@@ -28,21 +28,21 @@ export const login = async (req, res, next) => {
       return next(createError(404, "incorrect password or username"));
 
     //jsonwebtoken and cookie-parser
-    const token = jwt.sign(
-      {
-        id: user._id,
-        isSeller: user.isSeller, // we need this as only normal users can create review
-      },
-      process.env.JWT_SECRET
-    );
+    // const token = jwt.sign(
+    //   {
+    //     id: user._id,
+    //     isSeller: user.isSeller, // we need this as only normal users can create review
+    //   },
+    //   process.env.JWT_SECRET
+    // );
 
-    const { password, ...info } = user._doc;
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-      })
-      .status(200)
-      .send(info);
+    // const { password, ...info } = user._doc;
+    // res
+    //   .cookie("accessToken", token, {
+    //     httpOnly: true,
+    //   })
+    //   .status(200)
+    //   .send(info);
   } catch (error) {
     next(error);
   }
